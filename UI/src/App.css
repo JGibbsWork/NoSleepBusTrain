@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+  background-color: #262626;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+h1 {
+  font-size: 10rem;
+  margin-bottom: 5%;
+  margin-top: 6%;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.allRoutes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.redDot {
+  height: 25px;
+  margin-top: 18px;
+  margin-right: 18px;
+  width: 25px;
+  background-color: #c10101;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.brownDot {
+  height: 25px;
+  margin-top: 18px;
+  margin-right: 18px;
+  width: 25px;
+  background-color: #673c01;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.oneRoute {
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  border-bottom: 1px solid #262626;
+  justify-items: center;
+}
+
+.routeHead{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.transport {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
