@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   async function getThings() {
-    const response = await fetch('http://localhost:3001/api/data');
+    const response = await fetch('https://cta-all-the-way-api-9915a41bdd57.herokuapp.com/api/data');
     const data = await response.json();
     setBrownNorth(data.brown.north);
     setBrownSouth(data.brown.south);

@@ -1,5 +1,6 @@
 require('dotenv').config();
 const axios = require('axios');
+const moment = require('moment-timezone');
 
 function sortTrain(trains) {
     let south = [];
@@ -24,11 +25,16 @@ function sortBuses(buses){
 }
 
 function minutesAway(time) {
-    let now = new Date();
-    let arrival = new Date(time);
-    let diff = arrival - now;
-    let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    return minutes.toString();
+    let now = moment().tz('America/Chicago');
+    let arrival = moment.tz(time, 'America/Chicago'); // Ensure the arrival time is parsed in the correct time zone
+    console.log(`Current time (Chicago): ${now.format()}`);
+    console.log(`Arrival time (Chicago): ${arrival.format()}`);
+    let diff1 = moment.duration(arrival.diff(now));
+    let diff2 = moment.duration(now.diff(arrival));
+    const diff = diff1.asMinutes() > 0 ? diff1 : diff2;
+    let minutes = diff.asMinutes();
+    console.log(`Difference in minutes: ${minutes}`);
+    return Math.floor(minutes).toString();
 }
 
 async function getBus() {
